@@ -59,9 +59,7 @@ public class UserController {
     }*/
     @PostMapping
     public ResponseEntity<User> create(@RequestBody User user,BindingResult result) {
-      if (result.hasErrors()) {
-            return validation(result);
-        }
+   
         return ResponseEntity.status(HttpStatus.CREATED).body(service.save(user));
        
     }
